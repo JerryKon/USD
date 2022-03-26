@@ -212,7 +212,7 @@ UsdAppUtilsFrameRecorder::Record(
     const GfFrustum frustum = gfCamera.GetFrustum();
     const GfVec3d cameraPos = frustum.GetPosition();
 
-    _imagingEngine.SetRendererAov(HdAovTokens->color);
+    _imagingEngine.SetRendererAov(_aov);
 
     _imagingEngine.SetCameraState(
         frustum.ComputeViewMatrix(),
@@ -260,7 +260,7 @@ UsdAppUtilsFrameRecorder::Record(
         _imagingEngine.Render(pseudoRoot, renderParams);
     } while (!_imagingEngine.IsConverged());
 
-    HgiTextureHandle handle = _imagingEngine.GetAovTexture(HdAovTokens->color);
+    HgiTextureHandle handle = _imagingEngine.GetAovTexture(_aov);
     if (!handle) {
         TF_CODING_ERROR("No color presentation texture");
         return false;

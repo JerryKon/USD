@@ -33,5 +33,7 @@ def AddCmdlineArgs(argsParser, defaultValue='color', altHelpText=''):
         helpText = (
             'the aov mode to use (default=%(default)s)')
 
+    aovChoices = ['color', 'depth', 'depthStencil', 'cameraDepth', 'primId', 'instanceId',
+              'elementId', 'edgeId', 'pointId', 'Peye', 'Neye', 'patchCoord', 'primitiveParam', 'normal']
     argsParser.add_argument('--aov', action='store',
-        type=str, default=defaultValue, help=helpText)
+                            type=str, choices=aovChoices, default=defaultValue, help=helpText)

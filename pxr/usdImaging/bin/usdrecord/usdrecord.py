@@ -99,7 +99,8 @@ def main():
     UsdAppUtils.complexityArgs.AddCmdlineArgs(parser)
     UsdAppUtils.colorArgs.AddCmdlineArgs(parser)
     UsdAppUtils.rendererArgs.AddCmdlineArgs(parser)
-
+    UsdAppUtils.aovArgs.AddCmdlineArgs(parser)
+    
     parser.add_argument('--imageWidth', '-w', action='store', type=int,
         default=960,
         help=(

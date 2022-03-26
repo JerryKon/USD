@@ -97,6 +97,13 @@ public:
         _colorCorrectionMode = colorCorrectionMode;
     }
 
+    /// Sets the output aov to be used for recording.
+    ///
+    /// By default, aov is "color"
+    void SetAov(const TfToken& aov) {
+        _aov = aov;
+    }
+
     /// Sets the UsdGeomImageable purposes to be used for rendering
     ///
     /// We will __always__ include "default" purpose, and by default,
@@ -128,6 +135,7 @@ private:
     size_t _imageWidth;
     float _complexity;
     TfToken _colorCorrectionMode;
+    TfToken _aov;
     TfTokenVector _purposes;
 };
 

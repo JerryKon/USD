@@ -100,9 +100,8 @@ public:
     /// Sets the output aov to be used for recording.
     ///
     /// By default, aov is "color"
-    void SetAov(const TfToken& aov) {
-        _aov = aov;
-    }
+    USDAPPUTILS_API
+    void SetAov(const TfToken& aov);
 
     /// Sets the UsdGeomImageable purposes to be used for rendering
     ///

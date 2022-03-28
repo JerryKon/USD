@@ -43,7 +43,7 @@
 #include "pxr/imaging/hdSt/textureUtils.h"
 
 #include <string>
-
+#include <iostream>
 
 PXR_NAMESPACE_OPEN_SCOPE
 
@@ -52,6 +52,7 @@ UsdAppUtilsFrameRecorder::UsdAppUtilsFrameRecorder() :
     _imageWidth(960u),
     _complexity(1.0f),
     _colorCorrectionMode("disabled"),
+    _aov(HdAovTokens->color),
     _purposes({UsdGeomTokens->default_, UsdGeomTokens->proxy})
 {
     GarchGLApiLoad();
@@ -61,6 +62,17 @@ static bool
 _HasPurpose(const TfTokenVector& purposes, const TfToken& purpose)
 {
     return std::find(purposes.begin(), purposes.end(), purpose) != purposes.end();
+}
+
+void 
+UsdAppUtilsFrameRecorder::SetAov(const TfToken &aov)
+{
+    if(aov == HdAovTokens->color)
+        _aov = HdAovTokens->color;
+    else if (aov == HdAovTokens->depth)
+        _aov = HdAovTokens->depth;
+    else if (aov == HdAovTokens->primId)
+        _aov = HdAovTokens->primId;
 }
 
 void

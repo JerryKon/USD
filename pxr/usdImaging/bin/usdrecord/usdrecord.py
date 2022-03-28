@@ -147,6 +147,7 @@ def main():
                 args.rendererPlugin))
     frameRecorder.SetImageWidth(args.imageWidth)
     frameRecorder.SetComplexity(args.complexity.value)
+    frameRecorder.SetAov(args.aov)
     frameRecorder.SetColorCorrectionMode(args.colorCorrectionMode)
     frameRecorder.SetIncludedPurposes(purposes)
 

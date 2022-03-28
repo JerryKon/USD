@@ -28,6 +28,7 @@ del Tf
 
 from . import cameraArgs
 from . import colorArgs
+from . import aovArgs
 from . import complexityArgs
 from . import framesArgs
 from . import rendererArgs

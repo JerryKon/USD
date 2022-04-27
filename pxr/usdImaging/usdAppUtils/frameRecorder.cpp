@@ -272,7 +272,7 @@ UsdAppUtilsFrameRecorder::Record(
         _imagingEngine.Render(pseudoRoot, renderParams);
     } while (!_imagingEngine.IsConverged());
 
-    HgiTextureHandle handle = _imagingEngine.GetAovTexture(_aov);
+    HgiTextureHandle handle = _imagingEngine.GetAovTexture(HdAovTokens->color);
     if (!handle) {
         TF_CODING_ERROR("No color presentation texture");
         return false;

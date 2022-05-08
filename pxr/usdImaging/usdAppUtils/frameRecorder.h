@@ -105,6 +105,12 @@ public:
         _aov = aov;
     }
 
+    /// Sets the output shadingMode to be used for recording.
+    ///
+    /// By default, shadingMode is "geom_smooth"
+    USDAPPUTILS_API
+    void SetShadingMode(const TfToken& shadingMode);
+
     /// Sets the UsdGeomImageable purposes to be used for rendering
     ///
     /// We will __always__ include "default" purpose, and by default,
@@ -137,6 +143,7 @@ private:
     float _complexity;
     TfToken _colorCorrectionMode;
     TfToken _aov;
+    UsdImagingGLDrawMode _shadingMode;
     TfTokenVector _purposes;
 };
 

@@ -64,17 +64,6 @@ _HasPurpose(const TfTokenVector& purposes, const TfToken& purpose)
     return std::find(purposes.begin(), purposes.end(), purpose) != purposes.end();
 }
 
-void 
-UsdAppUtilsFrameRecorder::SetAov(const TfToken &aov)
-{
-    if(aov == HdAovTokens->color)
-        _aov = HdAovTokens->color;
-    else if (aov == HdAovTokens->depth)
-        _aov = HdAovTokens->depth;
-    else if (aov == HdAovTokens->primId)
-        _aov = HdAovTokens->primId;
-}
-
 void
 UsdAppUtilsFrameRecorder::SetIncludedPurposes(const TfTokenVector& purposes) 
 {

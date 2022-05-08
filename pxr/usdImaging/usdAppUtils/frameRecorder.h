@@ -101,7 +101,9 @@ public:
     ///
     /// By default, aov is "color"
     USDAPPUTILS_API
-    void SetAov(const TfToken& aov);
+    void SetAov(const TfToken& aov){
+        _aov = aov;
+    }
 
     /// Sets the UsdGeomImageable purposes to be used for rendering
     ///
